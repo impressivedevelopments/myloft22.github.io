@@ -1,0 +1,18 @@
+/* Import _misc */
+@import '_misc/_colors';
+@import '_misc/_fonts';
+@import '_misc/_mixin';
+
+/* Base settings */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Main styles */
+
+
