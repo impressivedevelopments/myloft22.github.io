@@ -16,31 +16,46 @@ body {
     margin: 0;
     padding: 0;
 
-    color: $white;
+    color: $black;
     @include regular;
     font-size: 1.4rem;
 }
 
 h1, h2, h3, h4, h5, h6,
-button, input {
+button, input, strong {
     text-transform: uppercase;
     @include bold;
 }
-
+button, input {
+    text-decoration: none;
+    outline: none;
+    border: 1px solid transparent;
+}
 /* Main styles */
 
-div[class$="container"] {
-    width: 1000px;
+.far, .fas { 
+    color: $primary;
+}
+.obscuration {
+    background: linear-gradient(
+        to right, 
+        $dark-grey 25%,
+        rgba(0, 0, 0, .5), 
+        $dark-grey 75%);
+}
+.container {
+    width: 1200px;
 
     padding: 0 25px;
-    margin: 0 auto;
-
+    margin: 0 auto;    
+}
+.row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
 }
-
 .header {
+    color: $white;
     &-title {
         height: 100px;
         background: $black;
@@ -48,46 +63,41 @@ div[class$="container"] {
         &__logo {
             background: url('../img/logo.png') no-repeat;
         }
-        &__description {
-            color: $white;
-        }
         &-callback {
             display: flex;
             flex-direction: column;
         }
     }
     &-banner {
-        background: url('../img/present/15.jpg') no-repeat center;
+        position: relative;
+        background: url('../img/present/7.jpg') no-repeat center;
         background-size: contain;
     }
     &-offer {
-        height: 15vh;
+        height: 150px;
         padding: 30px 0;
         background: $light-grey;
         text-transform: uppercase;
     }
 }
-
 .slider {
     overflow: hidden;
-    background: linear-gradient(
-        to right, 
-        $dark-grey 25%,
-        rgba(0, 0, 0, 0), 
-        $dark-grey 75%);
-
+    color: $white;
     &-description {
         width: 450px;
         height: 700px;
 
         padding: 100px 0;
+        margin: 0 auto;
 
         display: flex;
         flex-direction: column;
-        justify-content: space-around;        
+        justify-content: space-around; 
+        align-items: center;
+        
+        text-align: center;
     }
 }
-
 .offer {
     display: flex;
     align-items: center;
@@ -104,24 +114,72 @@ div[class$="container"] {
             top: 35%;
             right: 50%;
             transform: translateX(50%);
-            color: $primary;
         }
     }    
 }
+.section {
+    text-align: center;
+    &-content {
+        padding: 50px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &-item {
+            width: 160px;
+            height: 160px;
 
-.h1 {
-    &_lg {
-        font-size: 3.6rem;
+            padding: 5px;               
+            margin: 6px 0;            
+
+            border: 1px solid $light-grey;
+            object-fit: cover;
+            transition: .3s ease;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .container {        
+        padding: 50px 0;
+    }
+}
+.subscribe {
+    background: url('../img/present/5.jpg') no-repeat center;
+    color: $white;
+    &-form {
+        width: 800px;
+
+        padding: 75px 100px 75px;
+        margin: 50px auto;
+
+        position: relative;
+        border: 2px solid $light-grey;
+        &__input {
+            width: 275px;            
+            padding: 10px 15px;
+            text-align: center;
+        }
+        &__btn {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }
 
+.h1, .h2, .h3 {
+    &_lg {
+        // font-size: 3.6rem;
+        transform: scale(1.3);
+    }
+}
 .text {
     &_lg {
         font-size: 2.6rem;
         @include regular;
     }
 }
-
 .link {
     &_disabled {
         color: $white;
@@ -146,7 +204,6 @@ div[class$="container"] {
         @include bold;
     }
 }
-
 .btn {
     width: 180px;
     padding: 15px 0;
@@ -155,11 +212,17 @@ div[class$="container"] {
     border: 2px solid $primary;
     outline: none;
     color: $primary;
+    cursor: pointer;
+
+    transition: .25s ease;
     &_lg {
         width: 300px;
     }
     &_fill {
         background: $primary;
         color: $white;
+        &:hover {
+            background: transparent;
+        }
     }
 }
