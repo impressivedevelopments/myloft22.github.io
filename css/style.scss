@@ -31,6 +31,26 @@ button, button:active {
     cursor: pointer;
     @include bold;    
 }
+.title {
+    text-transform: uppercase;
+    font-size: 32px;
+}
+.description {
+        display: block;
+    font-size: 18px;
+}
+.icon_blue {
+        color: $primary;
+        padding-top: 60px;
+        padding-bottom: 20px;
+}
+div[class$="overlay"] {
+        background: linear-gradient(
+            to right, 
+            lighten($dark-grey,9%) 25%, 
+            rgba(0, 0, 0, .5), 
+            lighten($dark-grey,9%) 75%);
+}
 
 /* Main styles */
 
@@ -61,13 +81,6 @@ button, button:active {
 .gift {
     background: url('../img/background.jpg') no-repeat center center;
     background-size: contain;
-    &-overlay {
-        background: linear-gradient(
-            to right, 
-            lighten($dark-grey,9%) 25%, 
-            rgba(0, 0, 0, .5), 
-            lighten($dark-grey,9%) 75%);
-    }
     &-container {
         display: flex;
         align-items: center;
@@ -115,6 +128,9 @@ button, button:active {
             display: flex;
             justify-content: center;
             align-items: center;
+            &-item img {
+                width: 350px;
+            }
         }
     }
 }
@@ -146,5 +162,102 @@ button, button:active {
         }
     }
 }
+.figures {
+    color: $black;
+    text-align: center;
+    &-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 70px;
+        padding-bottom: 90px;
+        &_item {
+            border: 2px solid $white;
+            outline: 2px solid $light-grey;
+            margin: 2px;
+            width: 125px;
+            height: 125px;
+            object-fit: cover;
+            overflow: hidden;
+            
+        }
+    }
+}
+.present {
+    text-align: center;
+    background: url('../img/background.jpg') no-repeat center center;
+    &-form {
+        &_input {
+            padding-top: 50px;
+            padding-bottom: 30px;
+            input {
+                text-transform: uppercase;
+                padding: 21px 100px;
+            }
+        }
+    }
+}
+.creation {
+    text-align: center;
+    color: $black;
+    &-text {
+        padding-bottom: 70px;
+    }
+    &-content {
+        position: relative;
+        text-align-last: left;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+            right: 60%;
+            height: 250px;
+            width: 2px;
+            background: $light-grey;
+        }
+        &:before {
+            content: '•';
+            position: absolute;
+            color: $primary;
+            font-size: 30px;
+            top: -13px;
+            right: 59.6%;
+            z-index: 1;
+        }
+    }
+    &-step {
+        width: 400px;
+        &__counter {
+            display: block;
+            color: $primary;
+            text-transform: uppercase;
+            @include bold;
+        }
+        &__description {
+            display: block;
+            text-transform: uppercase;
+            font-size: 20px;
+            @include bold;
+        }
+        &__info {
+            text-align: left;
+        }
+    }
+    &-photo {
+        width: 400px;
+        &__image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+}
+
+
 
 @import '_misc/_media';
