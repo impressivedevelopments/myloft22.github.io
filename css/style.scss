@@ -7,12 +7,144 @@
 * {
     box-sizing: border-box;
 }
+h1 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
 
 body {
     margin: 0;
     padding: 0;
+    color: $white;
+    @include regular;
+    font-size: 14px;
+}
+div[class$="container"] {
+    width: 1000px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+button, button:active {
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    @include bold;    
 }
 
 /* Main styles */
 
+.header {
+    background: $black;
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-callback {
+        padding-top: 20px;
+        &__phone {
+            @include bold;
+            color: $white;
+            text-decoration: none;
+            font-size: 26px;
+        }
+        &__text {
+        display: block;
+        padding-bottom: 20px;
+            &_selected {
+                color: $primary;
+            }
+        }
+    }
+}
+.gift {
+    background: url('../img/background.jpg') no-repeat center center;
+    background-size: contain;
+    &-overlay {
+        background: linear-gradient(
+            to right, 
+            lighten($dark-grey,9%) 25%, 
+            rgba(0, 0, 0, .5), 
+            lighten($dark-grey,9%) 75%);
+    }
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__text {
+        font-size: 35px;
+        padding-top: 115px;
+        padding-bottom: 60px;
+    }
+    &__info {
+        font-size: 20px;
+        padding-bottom: 70px;
+    }
+    &__button {
+        background: $primary;
+        color: $white;
+        font-size: 16px;
+        padding: 15px 60px;
+        margin-bottom: 110px;
+            &:hover {
+                background: darken($primary, 10%);
+            }
+    }
+    &-product-examples {
+        &-price {
+            position: relative;
+            text-align: center;
+            width: 120px;
+            height: 140px;
+            background: url('../img/shape.png') no-repeat center center;
+            span {
+                position: absolute; 
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+            strong {
+                font-size: 20px;
+            }
+        }
+        &-slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+.profits {
+    background: $light-grey;
+    &-content {
+        display: flex;
+        justify-content: space-between;
+        &-item {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            span {
+                color: $black;
+                font-size: 18px;
+            }
+        }
+        &-examples-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 120px;
+            height: 140px;
+            background: url('../img/shape-blue.png') no-repeat center center;
+            i {
+                color: $primary;
+            }
+        }
+    }
+}
 
+@import '_misc/_media';
