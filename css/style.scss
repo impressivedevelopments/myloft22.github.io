@@ -214,7 +214,7 @@ div[class$="overlay"] {
             position: absolute;
             top: 0;
             transform: translateX(-50%);
-            right: 60%;
+            right: 50%;
             height: 250px;
             width: 2px;
             background: $light-grey;
@@ -225,7 +225,7 @@ div[class$="overlay"] {
             color: $primary;
             font-size: 30px;
             top: -13px;
-            right: 59.6%;
+            right: 49.6%;
             z-index: 1;
         }
     }
@@ -248,7 +248,7 @@ div[class$="overlay"] {
         }
     }
     &-photo {
-        width: 400px;
+        width: 200px;
         &__image {
             width: 200px;
             height: 200px;
@@ -257,7 +257,32 @@ div[class$="overlay"] {
         }
     }
 }
-
+.reasons {
+    text-align: center;
+    color: $black;
+    &-text {
+        padding-bottom: 70px;
+    }
+    &-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        &-item {
+            text-align: center;
+            width: 250px;
+            margin-right: 60px;
+            &__text {
+                display: block;
+                text-transform: uppercase;
+                @include bold;
+            }
+            &__description {
+                display: block;
+            }
+        }
+    }
+}
 
 
 @import '_misc/_media';
