@@ -22,10 +22,12 @@
     }
     .profits {
         &-content {
+            align-items: center;
             &-item {
                 border-bottom: 1px solid darken($light-grey,5%);
                 margin-top: 5px;
                 margin-bottom: 5px;
+                text-align: center;
             }
             flex-direction: column;  
             &-examples {
@@ -60,6 +62,13 @@
             display: none;
             &__image {
                 display: none;
+            }
+        }
+    }
+    .reasons {
+        &-content {
+            &-item {
+                margin-right: 0px;
             }
         }
     }

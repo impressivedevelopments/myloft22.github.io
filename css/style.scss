@@ -260,11 +260,9 @@ div[class$="overlay"] {
 .reasons {
     text-align: center;
     color: $black;
-    &-text {
-        padding-bottom: 70px;
-    }
     &-content {
         display: flex;
+        padding-bottom: 20px;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
