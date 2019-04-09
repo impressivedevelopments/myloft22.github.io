@@ -55,6 +55,19 @@ button, input {
   color: #1a75bb;
 }
 
+.hidden {
+  display: none;
+}
+
+.close {
+  color: #ffffff;
+  position: absolute;
+  top: 5vh;
+  right: 10%;
+  z-index: 101;
+  cursor: pointer;
+}
+
 .obscuration {
   background: -webkit-gradient(linear, left top, right top, color-stop(25%, #202020), color-stop(rgba(0, 0, 0, 0.5)), color-stop(75%, #202020));
   background: linear-gradient(to right, #202020 25%, rgba(0, 0, 0, 0.5), #202020 75%);
@@ -171,7 +184,7 @@ button, input {
   text-align: center;
 }
 
-.section-content {
+.section-gallery {
   padding: 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -181,23 +194,46 @@ button, input {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 
-.section-content-item {
+.section-gallery-item {
   width: 160px;
   height: 160px;
   padding: 5px;
   margin: 6px 0;
   border: 1px solid #f7f8fc;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
-.section-content-item:hover {
+.section-gallery-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section-gallery-item:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  cursor: pointer;
+}
+
+.section-gallery .full-screen {
+  width: 100%;
+  height: 100vh;
+  padding: 10vh 15%;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.75);
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  -webkit-transform: none;
+          transform: none;
+  cursor: default;
 }
 
 .section .container {
@@ -215,6 +251,9 @@ button, input {
   margin: 50px auto;
   position: relative;
   border: 2px solid #f7f8fc;
+  -o-border-image: conic-gradient(#f7f8fc 30%, transparent 35% 65%, #f7f8fc 70%);
+     border-image: conic-gradient(#f7f8fc 30%, transparent 35% 65%, #f7f8fc 70%);
+  border-image-slice: 1;
 }
 
 .subscribe-form__input {
